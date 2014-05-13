@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Solution Items", "0. Solution Items", "{3ACAB1BA-DF29-4C94-9FFB-AB4996C3D89A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. References", "1. References", "{164DB875-BA68-4C8F-A00F-1B3E6FC0C3FF}"
+	ProjectSection(SolutionItems) = preProject
+		References\ICSharpCode.SharpZipLib.dll = References\ICSharpCode.SharpZipLib.dll
+		References\Microsoft.Practices.ObjectBuilder2.dll = References\Microsoft.Practices.ObjectBuilder2.dll
+		References\Microsoft.Practices.Unity.Configuration.dll = References\Microsoft.Practices.Unity.Configuration.dll
+		References\Microsoft.Practices.Unity.dll = References\Microsoft.Practices.Unity.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Web", "3. Web", "{2D2DE708-F786-4744-ABD9-57B61750717A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xplorer.Core", "Xplorer.Core\Xplorer.Core.csproj", "{687B570B-EE88-4019-AE82-A26C855C277C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xplorer", "Xplorer\Xplorer.csproj", "{2B11BD9D-91D5-4D20-82D3-DB55EDB4F7CC}"
+EndProject
+Project("{C8D11400-126E-41CD-887F-60BD40844F9E}") = "Xplorer.Database", "Xplorer.Database\Xplorer.Database.dbproj", "{67CBC824-A49E-4E9B-A947-360F3DFE65C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Core", "2. Core", "{C2F5D3C2-3695-462D-9DF5-AED1B94F8A8C}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{687B570B-EE88-4019-AE82-A26C855C277C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{687B570B-EE88-4019-AE82-A26C855C277C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{687B570B-EE88-4019-AE82-A26C855C277C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{687B570B-EE88-4019-AE82-A26C855C277C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{687B570B-EE88-4019-AE82-A26C855C277C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{687B570B-EE88-4019-AE82-A26C855C277C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{687B570B-EE88-4019-AE82-A26C855C277C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{687B570B-EE88-4019-AE82-A26C855C277C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{687B570B-EE88-4019-AE82-A26C855C277C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{687B570B-EE88-4019-AE82-A26C855C277C}.Release|x86.ActiveCfg = Release|Any CPU
+		{2B11BD9D-91D5-4D20-82D3-DB55EDB4F7CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B11BD9D-91D5-4D20-82D3-DB55EDB4F7CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B11BD9D-91D5-4D20-82D3-DB55EDB4F7CC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2B11BD9D-91D5-4D20-82D3-DB55EDB4F7CC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2B11BD9D-91D5-4D20-82D3-DB55EDB4F7CC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2B11BD9D-91D5-4D20-82D3-DB55EDB4F7CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B11BD9D-91D5-4D20-82D3-DB55EDB4F7CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B11BD9D-91D5-4D20-82D3-DB55EDB4F7CC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2B11BD9D-91D5-4D20-82D3-DB55EDB4F7CC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2B11BD9D-91D5-4D20-82D3-DB55EDB4F7CC}.Release|x86.ActiveCfg = Release|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2B11BD9D-91D5-4D20-82D3-DB55EDB4F7CC} = {2D2DE708-F786-4744-ABD9-57B61750717A}
+		{67CBC824-A49E-4E9B-A947-360F3DFE65C3} = {C2F5D3C2-3695-462D-9DF5-AED1B94F8A8C}
+		{687B570B-EE88-4019-AE82-A26C855C277C} = {C2F5D3C2-3695-462D-9DF5-AED1B94F8A8C}
+	EndGlobalSection
+EndGlobal

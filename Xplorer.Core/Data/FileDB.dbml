@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dFileManager" Class="FileDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=dFileManager;Integrated Security=True" SettingsObjectName="Tavisca.FileManager.Properties.Settings" SettingsPropertyName="dFileManagerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[File]" Member="Files">
+    <Type Name="File" Id="ID1">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="IsDirectory" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Data" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastModifiedTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Attributes" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Extension" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="IsZipped" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsEncrypted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OriginalSize" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ParentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Permissions" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spFMDelete" Method="spFMDelete">
+    <Parameter Name="ObjectId" Parameter="objectId" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spFMDirectoryCopy" Method="spFMDirectoryCopy">
+    <Parameter Name="SourceId" Parameter="sourceId" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TargeId" Parameter="targeId" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="TargetPath" Parameter="targetPath" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="LastModifiedTime" Parameter="lastModifiedTime" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CreationTime" Parameter="creationTime" Type="System.DateTime" DbType="DateTime" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.spFMDirectoryCreate" Method="spFMDirectoryCreate">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Data" Parameter="data" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="CreationTime" Parameter="creationTime" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Attributes" Parameter="attributes" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="OriginalSize" Parameter="originalSize" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="ParentId" Parameter="parentId" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Permissions" Parameter="permissions" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.spFMDirectoryMove" Method="spFMDirectoryMove">
+    <Parameter Name="source" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="target" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="targetParent" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="trgDirName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="modifiedDateTime" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spFMFileCopy" Method="spFMFileCopy">
+    <Parameter Name="srcFileName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="srcDirFullName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="tgtFileName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="tgtExtension" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="tgtDirFullName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="modifiedDateTime" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spFMFileMove" Method="spFMFileMove">
+    <Parameter Name="srcFileName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="srcDirFullName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="tgtFileName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="tgtExtension" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="tgtDirFullName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="modifiedDateTime" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spFMFileRead" Method="spFMFileRead">
+    <Parameter Name="DirPath" Parameter="dirPath" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FileName" Parameter="fileName" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.spFMFileUpdate" Method="spFMFileUpdate">
+    <Parameter Name="DirPath" Parameter="dirPath" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FileName" Parameter="fileName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Data" Parameter="data" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="LastModifiedTime" Parameter="lastModifiedTime" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Attributes" Parameter="attributes" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Extension" Parameter="extension" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="IsZipped" Parameter="isZipped" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsEncrypted" Parameter="isEncrypted" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="OriginalSize" Parameter="originalSize" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Permissions" Parameter="permissions" Type="System.Int16" DbType="SmallInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spFMGetDirectories" Method="spFMGetDirectories">
+    <Parameter Name="DirId" Parameter="dirId" Type="System.Int64" DbType="BigInt" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.spFMGetDirectoriesRecursive" Method="spFMGetDirectoriesRecursive">
+    <Parameter Name="DirId" Parameter="dirId" Type="System.Int64" DbType="BigInt" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.spFMGetFiles" Method="spFMGetFiles">
+    <Parameter Name="DirId" Parameter="dirId" Type="System.Int64" DbType="BigInt" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.spFMGetFilesRecursive" Method="spFMGetFilesRecursive">
+    <Parameter Name="DirId" Parameter="dirId" Type="System.Int64" DbType="BigInt" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.spFMGetFileSystemEntries" Method="spFMGetFileSystemEntries">
+    <Parameter Name="DirId" Parameter="dirId" Type="System.Int64" DbType="BigInt" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.spFMGetFileSystemEntriesRecursive" Method="spFMGetFileSystemEntriesRecursive">
+    <Parameter Name="DirId" Parameter="dirId" Type="System.Int64" DbType="BigInt" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.spFMGetObject" Method="spFMGetObject">
+    <Parameter Name="DirPath" Parameter="dirPath" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="FileName" Parameter="fileName" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IsDirectory" Parameter="isDirectory" Type="System.Boolean" DbType="Bit" />
+    <ElementType IdRef="ID1" />
+  </Function>
+</Database>

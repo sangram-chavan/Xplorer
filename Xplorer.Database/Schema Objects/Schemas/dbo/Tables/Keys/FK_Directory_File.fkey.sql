@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[DirPath]
+    ADD CONSTRAINT [FK_Directory_File] FOREIGN KEY ([Id]) REFERENCES [dbo].[FileSystem] ([Id]) ON DELETE CASCADE ON UPDATE NO ACTION;
+
